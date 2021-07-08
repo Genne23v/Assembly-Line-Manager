@@ -99,7 +99,7 @@ namespace sdds
 			os.setf(std::ios::left);
 			os.width(m_widthField);
 			os.fill(' ');
-			os << m_numInStock << "Description: " << m_itemDesc << std::endl;
+			os << m_numInStock << " Description: " << m_itemDesc << std::endl;
 			os.unsetf(std::ios::left);
 		} 
 		else
