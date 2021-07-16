@@ -54,6 +54,8 @@ namespace sdds
 	{
 		if (this != &src)
 		{
+			if (m_lstItem != nullptr) delete[] m_lstItem;
+
 			m_lstItem = src.m_lstItem;
 			src.m_lstItem = nullptr;
 
