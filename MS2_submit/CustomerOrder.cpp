@@ -69,7 +69,9 @@ namespace sdds
 		{
 			for (auto i = 0u; i < m_cntItem; i++)
 				delete m_lstItem[i];
-			delete m_lstItem;
+
+			delete[] m_lstItem;
+			m_lstItem = nullptr;
 		}
 	}
 	bool CustomerOrder::isFilled() const
