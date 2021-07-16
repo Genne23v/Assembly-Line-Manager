@@ -65,9 +65,12 @@ namespace sdds
 	}
 	CustomerOrder::~CustomerOrder()
 	{
-		//for (auto i = 0u; i < m_cntItem; i++)
-			//delete m_lstItem[i];
-		delete[] m_lstItem;
+		if (m_lstItem != nullptr)
+		{
+			for (auto i = 0u; i < m_cntItem; i++)
+				delete m_lstItem[i];
+			delete m_lstItem;
+		}
 	}
 	bool CustomerOrder::isFilled() const
 	{
@@ -108,7 +111,7 @@ namespace sdds
 				station.getNextSerialNumber();
 				m_lstItem[i]->m_isFilled = true;
 
-				os << "Filled " << m_name << ", " << m_product << " [" << m_lstItem[i]->m_itemName << "]" << std::endl;
+				os << "    Filled " << m_name << ", " << m_product << " [" << m_lstItem[i]->m_itemName << "]" << std::endl;
 			}
 		}
 	}
