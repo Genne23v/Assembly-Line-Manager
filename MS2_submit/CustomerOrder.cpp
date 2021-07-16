@@ -100,13 +100,11 @@ namespace sdds
 	}
 	void CustomerOrder::fillItem(Station& station, std::ostream& os)
 	{
-		bool itemContained = false;
 
 		for (size_t i = 0; i < m_cntItem; i++)
 		{
 			if (m_lstItem[i]->m_itemName == station.getItemName())
 			{
-				itemContained = true;
 				station.getNextSerialNumber();
 				m_lstItem[i]->m_isFilled = true;
 
