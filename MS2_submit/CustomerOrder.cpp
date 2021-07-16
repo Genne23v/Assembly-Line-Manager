@@ -12,7 +12,7 @@
 
 namespace sdds
 {
-	unsigned int CustomerOrder::m_widthField = 0;
+	size_t CustomerOrder::m_widthField = 0;
 	CustomerOrder::CustomerOrder(const std::string& src)
 	{
 
@@ -73,7 +73,7 @@ namespace sdds
 	{
 		bool filled = true;
 
-		for (auto i = 0; i < m_cntItem; i++)
+		for (size_t i = 0; i < m_cntItem; i++)
 		{
 			if (!m_lstItem[i]->m_isFilled)
 			{
@@ -86,7 +86,7 @@ namespace sdds
 	{
 		bool filled = true;
 
-		for (auto i = 0; i < m_cntItem; i++)
+		for (size_t i = 0; i < m_cntItem; i++)
 		{
 			if (m_lstItem[i]->m_itemName == itemName)
 			{
@@ -102,7 +102,7 @@ namespace sdds
 	{
 		bool itemContained = false;
 
-		for (auto i = 0; i < m_cntItem; i++)
+		for (size_t i = 0; i < m_cntItem; i++)
 		{
 			if (m_lstItem[i]->m_itemName == station.getItemName())
 			{
@@ -118,7 +118,7 @@ namespace sdds
 	{
 		os << m_name << " - " << m_product << std::endl;
 
-		for (auto i = 0; i < m_cntItem; i++)
+		for (size_t i = 0; i < m_cntItem; i++)
 		{
 			os << "[";
 			os.width(6);
