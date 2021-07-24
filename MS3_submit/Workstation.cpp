@@ -123,7 +123,7 @@ namespace sdds
 		}
 		else
 		{
-			os << getItemName() << " --> END OF LINE" << std::endl;
+			os << getItemName() << " --> End of Line" << std::endl;
 		}
 	}
 	Workstation& Workstation::operator+=(CustomerOrder&& newOrder)
