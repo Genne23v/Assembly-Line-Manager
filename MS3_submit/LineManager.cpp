@@ -12,13 +12,6 @@
 
 namespace sdds
 {
-	Workstation* getStation(Workstation* station, std::string itemName)
-	{
-		if (station->getItemName() == itemName)
-		{
-			return station;
-		}
-	}
 	LineManager::LineManager(const std::string& file, const std::vector<Workstation*>& stations)
 	{
 		std::ifstream fin(file);
@@ -41,19 +34,14 @@ namespace sdds
 					auto station = std::find_if(stations.begin(), stations.end(),
 						[&firstStation](const Workstation* station)
 						{
-							if (station->getItemName() == firstStation)
-								return station;
+							return station->getItemName() == firstStation;
 						});
 					activeLine.push_back(*station);
 	
 					auto nStation = std::find_if(stations.begin(), stations.end(), 
 						[&](const Workstation* station)
 						{
-							auto begin = stations.begin(), end = stations.end();
-							if (station->getItemName() == secondStation)
-							{
-								return station;
-							}
+							return station->getItemName() == secondStation;
 						});
 					activeLine[i]->setNextStation(*nStation);
 				}
@@ -62,9 +50,7 @@ namespace sdds
 					auto station = std::find_if(stations.begin(), stations.end(),
 						[&](const Workstation* station)
 						{
-							auto begin = stations.begin(), end = stations.end();
-							if (station->getItemName() == line)
-								return station;
+							return station->getItemName() == line;
 						});
 					activeLine.push_back(*station);
 				}
@@ -128,7 +114,7 @@ namespace sdds
 			if (orderMoved) orderMoveNum++;
 
 			if (orderMoved && (i < activeLine.size()-2) && activeLine[i+1]->orderSize() == 1) i++;
-			/*if (i < activeLine.size()-1)*/ i++;
+			i++;
 		}
 
 		bool allOrderFilled = !(m_cntCustomerOrder - (completed.size() + incomplete.size()));
