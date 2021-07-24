@@ -142,6 +142,7 @@ namespace sdds
 			os.setf(std::ios::right);
 			os << m_lstItem[i]->m_serialNumber << "] ";
 			os.fill(' ');
+			os.unsetf(std::ios::right);
 			os.setf(std::ios::left);
 			os.width(m_widthField);
 			os << m_lstItem[i]->m_itemName << " - ";
