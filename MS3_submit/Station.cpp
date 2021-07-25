@@ -65,6 +65,7 @@ namespace sdds
 		os << "[";
 		os.width(3);
 		os.fill('0');
+		os.setf(std::ios::right);
 		os << m_itemId << "] Item: ";
 		os.width(m_widthField);
 		os.fill(' ');

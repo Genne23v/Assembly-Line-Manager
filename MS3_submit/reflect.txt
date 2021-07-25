@@ -1,0 +1,9 @@
+Name: Wonkeun No
+Student ID: 145095196
+Section: NBB
+
+The final project requires many of the skills that I have learned throughout the semester. I needed to use global/static variables which I felt much more comfortable with how to declare and when to use them. At the start of this semester, I'm used to C-style file extraction as I practiced a lot in last semester. Now I like using std::string class better. Its methods are much more modern and intuitive as similar function names and functionalities are used in different languages which will help me learn another language quickly in the future. 
+And using STL is great which makes C++ much more modern. It took me some time to familiarize myself with lambda and algorithm syntax. However, with a lot of practices, I get the hang of it. It has become a part of my skills. And I think it's very concise and convenient way to find desired data and manipulate. 
+The best part of the final project is to use linked list. I think it's very important of the language how to connect and access the data with pointer as it makes C++ more special than other languages. 
+And I extensively spent my time to implement the algorithm for LineManager::run() and Workstation::attemptToMoveOrder(). It's very importantt to understand the logic before writing code. Otherwise, it will take more time to debug and re-arrange codes.  
+It is a great project and I feel a great accomplishment. I think I need more practice to think in an object-oriented programming way. And polymorphism is still the hardest part for me. Thank you for helping me continuously learn throughout the semester!
