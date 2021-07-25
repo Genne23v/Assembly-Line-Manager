@@ -14,7 +14,7 @@ namespace sdds
 {
 	class Station
 	{
-		int m_itemId=0;
+		unsigned int m_itemId=0;
 		std::string m_itemName;
 		std::string m_itemDesc;
 		size_t m_serialNum = 0;

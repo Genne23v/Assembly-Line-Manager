@@ -105,21 +105,25 @@ namespace sdds
 		
 		os << "Line Manager Iteration: " << ++iter << std::endl;
 
-		bool orderMoved = false;
-		size_t numOrderInLine = m_cntCustomerOrder - (pending.size() + completed.size() + incomplete.size());		size_t i = 0, orderMoveNum = 0;;
-		while(orderMoveNum < numOrderInLine)
-		{
-			orderMoved = activeLine[i]->attemptToMoveOrder();
-
-			if (orderMoved) orderMoveNum++;
-
-			if (orderMoved && (i < activeLine.size()-2) && activeLine[i+1]->orderSize() == 1) i++;
-			i++;
-		}
-
 		bool allOrderFilled = !(m_cntCustomerOrder - (completed.size() + incomplete.size()));
-			/*std::all_of(pending.begin(), pending.end(),
-			[](CustomerOrder& order) { return order.isFilled(); });*/
+
+		if (!allOrderFilled)
+		{
+			bool orderMoved = false;
+			size_t numOrderInLine = m_cntCustomerOrder - (pending.size() + completed.size() + incomplete.size());		
+			size_t i = 0, orderMoveNum = 0;;
+
+			while(orderMoveNum < numOrderInLine)
+			{
+				orderMoved = activeLine[i]->attemptToMoveOrder();
+
+				if (orderMoved) orderMoveNum++;
+
+				if (orderMoved && (i < activeLine.size()-2) && activeLine[i+1]->orderSize() == 1) i++;
+				i++;
+			}
+		}
+			
 		return allOrderFilled;
 	}
 	void LineManager::display(std::ostream& os) const

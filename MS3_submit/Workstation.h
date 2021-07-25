@@ -21,7 +21,7 @@ namespace sdds
 		std::deque<CustomerOrder> m_orders;
 		Workstation* m_pNextStation = nullptr;
 	public:
-		Workstation(const std::string& src);
+		Workstation(const std::string& src) : Station(src) {};
 		Workstation(const Workstation& src) = delete;
 		void operator=(const Workstation& src) = delete;
 		Workstation(Workstation&& src) = delete;

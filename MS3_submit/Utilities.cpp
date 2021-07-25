@@ -25,7 +25,7 @@ namespace sdds
 			
 		if (findPos == next_pos)
 		{
-			more = 0;
+			more = false;
 			throw "Delimiter is found at" + next_pos;
 		}
 		else if (findPos != std::string::npos)
@@ -35,7 +35,7 @@ namespace sdds
 		}
 		else
 		{
-			more = 0;
+			more = false;
 			findPos = str.length();
 		}
 

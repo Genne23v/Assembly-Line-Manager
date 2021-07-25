@@ -41,7 +41,7 @@ namespace sdds
 			tmp.pop_front();
 		}
 		
-		if (CustomerOrder::m_widthField < util.getFieldWidth())
+		if (m_widthField < util.getFieldWidth())
 		{
 			m_widthField = util.getFieldWidth();
 		}
@@ -59,6 +59,7 @@ namespace sdds
 				for (size_t i = 0; i < m_cntItem; i++)
 					delete m_lstItem[i];
 				delete[] m_lstItem;
+				m_lstItem = nullptr;
 			}
 
 			m_lstItem = src.m_lstItem;
@@ -121,6 +122,7 @@ namespace sdds
 				{
 					m_lstItem[i]->m_isFilled = true;
 					m_lstItem[i]->m_serialNumber = station.getNextSerialNumber();
+					station.updateQuantity();
 					os << "    Filled " << m_name << ", " << m_product << " [" << m_lstItem[i]->m_itemName << "]" << std::endl;
 				}
 				else

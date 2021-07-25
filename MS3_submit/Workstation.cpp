@@ -12,13 +12,11 @@ namespace sdds
 	std::deque<CustomerOrder> pending;
 	std::deque<CustomerOrder> completed;
 	std::deque<CustomerOrder> incomplete;
-	Workstation::Workstation(const std::string& src) : Station(src) { }
 	void Workstation::fill(std::ostream& os)
 	{
 		if (!m_orders.empty())
 		{
 			m_orders.front().fillItem(*this, os);
-			updateQuantity();
 		}
 	}
 	bool Workstation::attemptToMoveOrder()
